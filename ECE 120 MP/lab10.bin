@@ -1,0 +1,27 @@
+; This is the file you will use for the lab assignment
+; Make sure to comment your code properly and don't exceed 
+; the line limitation for this assignment.  Good luck!
+
+0011 0001 0000 0000 ; x3100 - starting address of the program
+
+; The program description and code starts here
+; This program takes a list of 10 numbers and adds only the positve numbers given in the list. 
+; The program first locates the location of the 10 numbers and will proceed with 
+; addition of only positive numbers in the given 10 numbers of the list. 
+
+0101 011 011 1 00000; R3 <- 0			clear R3, x3100
+0101 100 100 1 00000; R4 <- 0 			clear R4, x3101
+0001 100 100 1 01010; R4 <- R4 + 10 		add R4 with 10, x3102
+0101 101 101 1 00000; R5 <- 0			clear R5, x3103
+0101 110 110 1 00000; R6 <- 0			clear R6; x3104
+
+1110 011 000101100  ; LEA to locate x3132
+0110 110 011 000000 ; LD value at address into R6, x3106
+
+0000 110 000000001  ; BR to x3107 for non-negative, x3107
+0001 101 110 000 101; R5 <- R5 + R6, x3108	add R6 with R5
+0001 011 011 1 00001; R3 <- R3 + 1, x3109	add R3 with 1
+0001 100 100 1 11111; R4 <- R4 - 1, x310A	subtract R4 by 1
+0000 001 111111010  ; BR back to x3106 if R4 is positive, x310B
+
+1111 0000 0010 0101 ; Halt
