@@ -110,7 +110,7 @@ ROWCOUNTER	LD R5,NEWLINE		;NEWLINE into R5
 
 FINISH		TRAP x25		;HALT
 
-;Adding appropriate assembly code and pseudo-ops;
+;Adding appropriate assembly code and its respective pseudo-ops;
 CDOWN		.FILL xFFFF
 NEWLINE		.FILL x000A
 
