@@ -24,4 +24,4 @@
 0001 100 100 1 11111; R4 <- R4 - 1, x310A	subtract R4 by 1
 0000 001 111111010  ; BR back to x3106 if R4 is positive, x310B
 
-1111 0000 0010 0101 ; Halt
+1111 0000 0010 0101 ; Halt program
